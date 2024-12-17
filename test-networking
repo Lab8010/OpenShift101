@@ -1,0 +1,53 @@
+このページでは、1つのコンテナを実行し、OCP外と通信出来るようにするコマンドを試すためのサンプルコマンドを紹介しています。
+※プロジェクトおよびコンテナを０から作ることを想定したコマンドとなっています。
+
+#プロジェクト名 ocp-learningを作成する。
+oc new-project ocp-learning
+
+#Pod名 my1stpodとして、Red Hatが提供するhttpd-24イメージを使用したコンテナを起動する。
+oc run my1stpod --image registry.access.redhat.com/ubi9/httpd-24
+
+#Podの起動している様子を確認するコマンド(上記のコマンドから1分後くらいに確認すると)
+oc get pods
+
+【上記コマンドの出力事例】
+#NAME       READY   STATUS    RESTARTS   AGE
+#my1stpod   1/1     Running   0          2m12s
+
+#上記で作成されたPod名 my1stpodに対するサービスを作成するコマンド(使用しているコンテナはポート番号8080でWebページを公開しているイメージ)
+oc expose pod/my1stpod --port 8080
+
+#上記のコマンドで作成されたサービスを確認する
+oc get service
+
+【上記コマンドの出力事例】
+#NAME       TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+#my1stpod   ClusterIP   10.217.5.111   <none>        8080/TCP   33s
+
+#上記で作成されたサービス名 my1stpodに対するルートを作成するコマンド
+oc expose service/my1stpod 
+
+【上記コマンドの出力事例】
+#route.route.openshift.io/my1stpod exposed
+
+#上記のコマンドで作成されたルートを確認する
+oc get route
+
+【上記コマンドの出力事例】
+#NAME       HOST/PORT                                PATH   SERVICES   PORT   TERMINATION   WILDCARD
+my1stpod   my1stpod-ocp-learning.apps-crc.testing          my1stpod   8080                 None
+
+#上記のルートにより公開されたPod(Pod名 my1stpod)にWebアクセスができるかを試す。(firefoxなどのブラウザでアクセスを試しても良い)
+curl my1stpod-ocp-learning.apps-crc.testing
+
+【上記コマンドの出力事例】(以下はコンテナイメージ内のWebページ) 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Test Page for the HTTP Server on Red Hat Enterprise Linux</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style type="text/css">
+			/*<![CDATA[*/
+
+

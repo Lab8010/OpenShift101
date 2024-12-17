@@ -28,3 +28,15 @@ OpenShiftの学習に役立つ教材として、以下のリンクをご紹介�
 さらに、上記書籍の一部部分を抜粋した無償版PDFもご利用いただけます。
 
 - [無償版PDF - Red Hat公式](https://www.redhat.com/tracks/_pfcdn/assets/10330/contents/394985/8398f4ce-995b-45fc-91a3-9cb284e10714.pdf)
+
+## OpenShiftを学習するのに役立つトレーニング
+
+Red Hat Learningサービスでは次のトレーニングコースを提供しています。
+
+### OpenShiftを使用したインフラの管理者向けのコース
+- [DO180 Red Hat OpenShift Administration I: Operating a Production Cluster](https://www.redhat.com/ja/services/training/red-hat-openshift-administration-i-operating-a-production-cluster)
+- [DO280 Red Hat OpenShift Administration II: Configuring a Production Cluster](https://www.redhat.com/ja/services/training/red-hat-openshift-administration-ii-configuring-a-production-cluster)
+
+### OpenShiftを使用したアプリケーションの開発者向けのコース
+- [DO188 Red Hat OpenShift Development I: Introduction to Containers with Podman](https://www.redhat.com/ja/services/training/do188-red-hat-open-shift-development-introduction-containers-with-podman)
+- [DO288 Red Hat OpenShift Developer II: Building and Deploying Cloud-native Applications](https://www.redhat.com/ja/services/training/red-hat-openshift-developer-ii-building-and-deploying-cloud-native-applications)

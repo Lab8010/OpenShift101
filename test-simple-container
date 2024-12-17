@@ -1,0 +1,28 @@
+このページでは、1つのコンテナを実行し、動作確認などに使用するコマンドを試すためのサンプルコマンドを紹介しています。
+
+#プロジェクト名 ocp-learningを作成する。
+oc new-project ocp-learning
+
+#Pod名 my1stpodとして、Red Hatが提供するhttpd-24イメージを使用したコンテナを起動する。
+oc run my1stpod --image registry.access.redhat.com/ubi9/httpd-24
+
+#Podの起動している様子を確認するコマンド(上記のコマンドから1分後くらいに確認すると)
+oc get pods
+
+【上記コマンドの出力事例】
+#NAME       READY   STATUS    RESTARTS   AGE
+#my1stpod   1/1     Running   0          2m12s
+
+#Podの起動している様子を確認するコマンド(上記のコマンドよりも多くの情報を取得できる)
+oc get pods -o wide
+
+【上記コマンドの出力事例】
+#NAME       READY   STATUS    RESTARTS   AGE     IP            NODE   NOMINATED NODE   READINESS GATES
+#my1stpod   1/1     Running   0          2m48s   10.217.0.66   crc    <none>           <none>
+
+#Pod名 my1stpodに関する詳細の情報を取得する
+oc describe pod/my1stpod
+
+#Pod名 my1stpodのログを表示する
+oc logs pod/my1stpod
+

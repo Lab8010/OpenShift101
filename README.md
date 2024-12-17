@@ -6,7 +6,8 @@
 
 ## OpenShift環境を自宅に準備する方法
 
-Red Hatは、小規模な環境でアプリケーション開発者が手軽に扱えるOpenShift環境として、**OpenShift Local**を提供しています。
+Red Hatは、小規模な環境でアプリケーション開発者が手軽に扱えるOpenShift環境として、
+**OpenShift Local**を提供しています。
 
 ### 導入手順
 

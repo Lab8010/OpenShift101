@@ -9,6 +9,24 @@
 Red Hatは、小規模な環境でアプリケーション開発者が手軽に扱えるOpenShift環境として、
 **OpenShift Local**を提供しています。
 
+### 必要なハードウェア要件 (Red Hat OpenShift Local 2.44の場合)
+[第2章 Red Hat OpenShift Local のインストール](https://docs.redhat.com/ja/documentation/red_hat_openshift_local/2.44/html/getting_started_guide/installing#minimum_system_requirements)
+
+2.1.1.1. OpenShift Container Platform の場合 
+- 物理 CPU コア 4 個
+- 空きメモリー 10.5 GB
+- ストレージ領域の 35 GB
+
+2.1.1.2. MicroShift の場合
+
+- 物理 CPU コア 2 個
+- 空きメモリー 4 GB
+- ストレージ領域の 35 GB
+
+#### 追加情報
+  - [参考資料 - MicroShiftとは](https://www.redhat.com/ja/topics/edge-computing/microshift)
+  - [オペレーティングシステム要件 - Red Hat OpenShift Local](https://docs.redhat.com/ja/documentation/red_hat_openshift_local/2.44/html/getting_started_guide/installing#operating_system_requirements)
+
 ### 導入手順
 
 OpenShift Localの導入方法については、以下の記事を参考にしてください。

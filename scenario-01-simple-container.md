@@ -17,7 +17,7 @@ oc run my1stpod --image registry.access.redhat.com/ubi9/httpd-24
 # Podの起動している様子を確認する
 oc get pods
 
-# 出力例:
+# 出力例: (以下のRunningステータスになるには、上記のコマンド実行後1分程度待つ必要がある)
 # NAME       READY   STATUS    RESTARTS   AGE
 # my1stpod   1/1     Running   0          2m12s
 
